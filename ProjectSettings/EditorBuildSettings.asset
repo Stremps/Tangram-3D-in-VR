@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/DemoScene.unity
+    guid: 319dafa5c80f29f428dc1e0d03f04177
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 53ec9d4ec7e91db43a08de656918f21e, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8dd0abaa3229ec04d851d2cace501012, type: 2}
