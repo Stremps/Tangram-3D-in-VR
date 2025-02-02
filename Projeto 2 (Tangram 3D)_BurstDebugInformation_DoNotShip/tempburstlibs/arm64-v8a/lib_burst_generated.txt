@@ -26,8 +26,6 @@ Library: C:\Users\Gustavo\CG\Projeto 2 (Tangram 3D)\Temp\BurstOutput\tempburstli
 --assembly-defines=Unity.XR.Hands;
 --assembly-defines=Unity.XR.Hands.Samples.VisualizerSample;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
---assembly-defines=Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator;
---assembly-defines=Unity.XR.Interaction.Toolkit.Samples.Hands;
 --assembly-defines=Unity.XR.Interaction.Toolkit.Samples.StarterAssets;
 --assembly-defines=Unity.XR.Management;
 --assembly-defines=Unity.XR.OpenXR;
@@ -135,8 +133,6 @@ Library: C:\Users\Gustavo\CG\Projeto 2 (Tangram 3D)\Temp\BurstOutput\tempburstli
 --assembly-defines=Unity.XR.Hands;
 --assembly-defines=Unity.XR.Hands.Samples.VisualizerSample;
 --assembly-defines=Unity.XR.Interaction.Toolkit;
---assembly-defines=Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator;
---assembly-defines=Unity.XR.Interaction.Toolkit.Samples.Hands;
 --assembly-defines=Unity.XR.Interaction.Toolkit.Samples.StarterAssets;
 --assembly-defines=Unity.XR.Management;
 --assembly-defines=Unity.XR.OpenXR;
