@@ -12,7 +12,6 @@ public class PlayerReach : MonoBehaviour
         if (Physics.Raycast(ray, out hit, reachDistance))
         {
             Debug.DrawLine(ray.origin, hit.point, Color.green);
-            Debug.Log("Object hit: " + hit.collider.gameObject.name);
         }
         else
         {

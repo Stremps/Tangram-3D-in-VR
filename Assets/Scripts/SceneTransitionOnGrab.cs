@@ -41,9 +41,11 @@ public class SceneTransitionOnGrab : MonoBehaviour
         }
     }
 
-    IEnumerator GoToSceneRoutine(){
+    public IEnumerator GoToSceneRoutine(){
         fadeScreen.FadeOut();
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
+
+        // Launch the new scene
         SceneManager.LoadScene(sceneToLoad);
     }
 
