@@ -25,6 +25,7 @@ public class PuzzleManager : MonoBehaviour
     private int currentPuzzleIndex = 0;
     private GameObject activePuzzle;
     private GameObject activeFinalPrefab;
+    public FadeScreen fadeScreen;
     private List<GameObject> activePieces = new List<GameObject>();
 
     private void Start()
@@ -44,7 +45,7 @@ public class PuzzleManager : MonoBehaviour
         if (currentPuzzleIndex >= puzzleSilhouettes.Count)
         {
             Debug.Log("Todos os quebra-cabeças foram concluídos!");
-            LoadFinalScene();
+            StartCoroutine(GoToSceneRoutine());
             return;
         }
 
@@ -112,7 +113,7 @@ public class PuzzleManager : MonoBehaviour
         else
         {
             Debug.Log("Todos os objetos foram transformados. Fim do desafio!");
-            LoadFinalScene();
+            StartCoroutine(GoToSceneRoutine());
         }
     }
 
@@ -122,16 +123,11 @@ public class PuzzleManager : MonoBehaviour
         LoadNextPuzzle();
     }
 
-    private void LoadFinalScene()
-    {
-        if (!string.IsNullOrEmpty(sceneToLoad))
-        {
-            Debug.Log($"Transição para a cena: {sceneToLoad}");
-            SceneManager.LoadScene(sceneToLoad);
-        }
-        else
-        {
-            Debug.LogError("Nenhuma cena foi definida para transição!");
-        }
+    public IEnumerator GoToSceneRoutine(){
+        yield return new WaitForSeconds(transitionDelay);
+        fadeScreen.FadeOut();
+        yield return new WaitForSeconds(fadeScreen.fadeDuration);
+        // Launch the new scene
+        SceneManager.LoadScene(sceneToLoad);
     }
 }
