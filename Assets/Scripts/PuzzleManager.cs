@@ -34,6 +34,8 @@ public class PuzzleManager : MonoBehaviour
     private GameObject activeFinalPrefab;
     public FadeScreen fadeScreen;
     private List<GameObject> activePieces = new List<GameObject>();
+    public PieceSpawner pieceSpawner;
+
 
     private void Start()
     {
@@ -52,7 +54,7 @@ public class PuzzleManager : MonoBehaviour
         if (currentPuzzleIndex >= puzzleSilhouettes.Count)
         {
             Debug.Log("Todos os quebra-cabeças foram concluídos!");
-            if(enableSceneTransition) 
+            if (enableSceneTransition)
                 StartCoroutine(GoToSceneRoutine());
             return;
         }
@@ -76,7 +78,14 @@ public class PuzzleManager : MonoBehaviour
         {
             Debug.LogError("A silhueta não contém o script PuzzleSilhouette!");
         }
+
+        // Chama o PieceSpawner para spawnar novas peças
+        if (pieceSpawner != null)
+        {
+            pieceSpawner.SpawnPieces(currentPuzzleIndex);
+        }
     }
+
 
     private void HandlePuzzleCompletion()
     {
