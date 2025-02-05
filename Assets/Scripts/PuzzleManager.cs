@@ -59,6 +59,7 @@ public class PuzzleManager : MonoBehaviour
             return;
         }
 
+
         // Se houver um FinalPrefab ativo na cena, ele será destruído antes de carregar o próximo puzzle
         if (activeFinalPrefab != null)
         {
@@ -66,8 +67,8 @@ public class PuzzleManager : MonoBehaviour
             activeFinalPrefab = null;
         }
 
-        // Instancia a nova silhueta na cena
-        activePuzzle = Instantiate(puzzleSilhouettes[currentPuzzleIndex], transform.position, Quaternion.identity);
+        // Instancia a nova silhueta na posição e rotação do PuzzleManager
+        activePuzzle = Instantiate(puzzleSilhouettes[currentPuzzleIndex], transform.position, transform.rotation);
         PuzzleSilhouette puzzleScript = activePuzzle.GetComponent<PuzzleSilhouette>();
 
         if (puzzleScript != null)
@@ -106,13 +107,6 @@ public class PuzzleManager : MonoBehaviour
     {
         yield return new WaitForSeconds(transformDelay);
 
-        // Obtém posição e rotação da silhueta
-        Vector3 puzzlePosition = activePuzzle.transform.position;
-        Quaternion puzzleRotation = activePuzzle.transform.rotation;
-
-        // Instancia o prefab final na mesma posição
-        activeFinalPrefab = Instantiate(finalPrefabs[currentPuzzleIndex], puzzlePosition, puzzleRotation);
-
         // Remove a silhueta e todas as peças encaixadas
         Destroy(activePuzzle);
         foreach (var piece in activePieces)
@@ -120,6 +114,9 @@ public class PuzzleManager : MonoBehaviour
             Destroy(piece);
         }
         activePieces.Clear();
+
+        // Instancia o prefab final na posição e rotação do PuzzleManager
+        activeFinalPrefab = Instantiate(finalPrefabs[currentPuzzleIndex], transform.position, transform.rotation);
 
         currentPuzzleIndex++;
 

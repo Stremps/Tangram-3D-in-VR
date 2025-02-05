@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene 1.unity
     guid: cef0080c991916847ade0ce5ccb61628
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Room Scene.unity
     guid: 6d91a88653da5834ab3883f5c860e0ea
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Medieval Scene.unity
     guid: 8fdb66b3d5f94c2488dec767fb72a89e
+  - enabled: 1
+    path: Assets/Scenes/Medieval Scene Final.unity
+    guid: 747d05debe6a8794b9767c957f2723b9
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.5.4/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
