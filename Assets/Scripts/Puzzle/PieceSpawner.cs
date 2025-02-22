@@ -72,6 +72,7 @@ public class PieceSpawner : MonoBehaviour
             // Instancia a peça
             GameObject spawnedPiece = Instantiate(piecePrefab, randomPosition, randomRotation);
             spawnedPieces.Add(spawnedPiece);
+            AudioManager.Instance.SFX_PlayAtSource("SpawnSound2", randomPosition);
 
             // Encontra o filho "Model"
             Transform modelTransform = spawnedPiece.transform.Find("Model");
