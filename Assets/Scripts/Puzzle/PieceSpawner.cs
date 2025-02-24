@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class PieceSpawner : MonoBehaviour
@@ -72,7 +73,9 @@ public class PieceSpawner : MonoBehaviour
             // Instancia a peça
             GameObject spawnedPiece = Instantiate(piecePrefab, randomPosition, randomRotation);
             spawnedPieces.Add(spawnedPiece);
-            AudioManager.Instance.SFX_PlayAtSource("SpawnSound2", randomPosition);
+
+            float randomPitch = Random.Range(0.9f, 1.1f);
+            AudioManager.Instance.SFX_PlayAtSource("SpawnSound2", randomPosition, randomPitch);
 
             // Encontra o filho "Model"
             Transform modelTransform = spawnedPiece.transform.Find("Model");
