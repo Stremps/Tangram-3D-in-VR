@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4328381617430517067}
   - component: {fileID: 5649052058278957216}
   - component: {fileID: 2027695081306404399}
+  - component: {fileID: 7465566303921626721}
   m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
@@ -287,6 +288,24 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &7465566303921626721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6872327073801285868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75990896a85eec42bc49aa94afeced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollection:
+  - tagName: targetSound
+    sfxName:
+    - woodPieceHit1
+    - woodPieceHit2
+    - woodPieceHit3
 --- !u!1 &7807217124125955553
 GameObject:
   m_ObjectHideFlags: 0
