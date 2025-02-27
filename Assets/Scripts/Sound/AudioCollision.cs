@@ -26,7 +26,6 @@ public class AudioCollision : MonoBehaviour
 
             // Play the audio
             AudioManager.Instance.SFX_PlayAtSource(soundName, this.transform.position);
-            Debug.Log($"Teve contato {soundName}");
         }
     }
 }
