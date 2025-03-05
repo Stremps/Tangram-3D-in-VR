@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 
@@ -50,53 +51,78 @@ public class PieceSpawner : MonoBehaviour
         StartCoroutine(SpawnPiecesWithDelay(selectedSet, spawnCollider));
     }
 
-    private IEnumerator SpawnPiecesWithDelay(PieceSet selectedSet, BoxCollider spawnCollider)
+private IEnumerator SpawnPiecesWithDelay(PieceSet selectedSet, BoxCollider spawnCollider)
+{
+    Vector3 spawnCenter = spawnCollider.bounds.center;
+    Vector3 spawnSize = spawnCollider.bounds.extents; // Metade do tamanho
+
+    for (int i = 0; i < selectedSet.pieces.Count; i++)
     {
-        Vector3 spawnCenter = spawnCollider.bounds.center;
-        Vector3 spawnSize = spawnCollider.bounds.extents; // Metade do tamanho
+        // Escolhe um prefab do conjunto de peças do puzzle atual
+        GameObject piecePrefab = selectedSet.pieces[i];
 
-        for (int i = 0; i < selectedSet.pieces.Count; i++)
+        // Gera uma posição aleatória dentro dos limites do spawnCollider
+        Vector3 randomPosition = new Vector3(
+            Random.Range(spawnCenter.x - spawnSize.x, spawnCenter.x + spawnSize.x),
+            Random.Range(spawnCenter.y - spawnSize.y, spawnCenter.y + spawnSize.y),
+            Random.Range(spawnCenter.z - spawnSize.z, spawnCenter.z + spawnSize.z)
+        );
+
+        // Gera uma rotação aleatória
+        Quaternion randomRotation = Random.rotation;
+
+        // Instancia o prefab normalmente (o objeto pai que contém o "Model" como filho)
+        GameObject spawnedPieceParent = Instantiate(piecePrefab, randomPosition, randomRotation);
+
+        // Procura o filho "Model" que contém os componentes e o Renderer
+        Transform modelTransform = spawnedPieceParent.transform.Find("Model");
+        GameObject mainPiece;
+        if (modelTransform != null)
         {
-            // Escolhe um prefab do conjunto de peças do puzzle atual
-            GameObject piecePrefab = selectedSet.pieces[i];
+            // Desanexa o "Model" do objeto pai para que ele seja o objeto principal
+            modelTransform.parent = null;
+            mainPiece = modelTransform.gameObject;
 
-            // Gera uma posição aleatória dentro dos limites do spawnArea
-            Vector3 randomPosition = new Vector3(
-                Random.Range(spawnCenter.x - spawnSize.x, spawnCenter.x + spawnSize.x),
-                Random.Range(spawnCenter.y - spawnSize.y, spawnCenter.y + spawnSize.y),
-                Random.Range(spawnCenter.z - spawnSize.z, spawnCenter.z + spawnSize.z)
-            );
+            // Destrói o objeto pai, pois não será mais necessário
+            Destroy(spawnedPieceParent);
+        }
+        else
+        {
+            Debug.LogWarning($"PieceSpawner: Nenhum objeto 'Model' encontrado em {spawnedPieceParent.name}. A peça principal será o próprio objeto instanciado.");
+            mainPiece = spawnedPieceParent;
+        }
 
-            // Gera uma rotação aleatória
-            Quaternion randomRotation = Random.rotation;
+        // Adiciona a peça principal na lista de peças instanciadas
+        spawnedPieces.Add(mainPiece);
 
-            // Instancia a peça
-            GameObject spawnedPiece = Instantiate(piecePrefab, randomPosition, randomRotation);
-            spawnedPieces.Add(spawnedPiece);
-
+        if(AudioManager.Instance != null)
+        {
             float randomPitch = Random.Range(0.9f, 1.1f);
             AudioManager.Instance.SFX_PlayAtSource("SpawnSound2", randomPosition, randomPitch);
-
-            // Encontra o filho "Model"
-            Transform modelTransform = spawnedPiece.transform.Find("Model");
-            if (modelTransform != null)
-            {
-                Renderer pieceRenderer = modelTransform.GetComponent<Renderer>();
-                if (pieceRenderer != null && availableMaterials.Count > 0)
-                {
-                    Material randomMaterial = availableMaterials[Random.Range(0, availableMaterials.Count)];
-                    pieceRenderer.material = new Material(randomMaterial); // Criamos uma nova instância para garantir a mudança
-                }
-            }
-            else
-            {
-                Debug.LogWarning($"PieceSpawner: Nenhum objeto 'Model' encontrado dentro de {spawnedPiece.name}. O material não foi aplicado.");
-            }
-
-            // Aguarda um tempo antes de spawnar a próxima peça
-            yield return new WaitForSeconds(spawnDelay);
         }
+        else
+        {
+            Debug.Log("Audio manager is not instantiate!");
+        }
+            
+
+        // Aplica o material no Renderer do objeto principal
+        Renderer pieceRenderer = mainPiece.GetComponent<Renderer>();
+        if (pieceRenderer != null && availableMaterials.Count > 0)
+        {
+            Material randomMaterial = availableMaterials[Random.Range(0, availableMaterials.Count)];
+            pieceRenderer.material = new Material(randomMaterial); // Nova instância para garantir a mudança
+        }
+        else
+        {
+            Debug.LogWarning($"PieceSpawner: Nenhum Renderer encontrado em {mainPiece.name}. O material não foi aplicado.");
+        }
+
+        // Aguarda um tempo antes de spawnar a próxima peça
+        yield return new WaitForSeconds(spawnDelay);
     }
+}
+
 
     public void ClearSpawnedPieces()
     {

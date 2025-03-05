@@ -17,8 +17,18 @@ public class PuzzleSlotData
 
     public bool CheckCorrectPiece(GameObject piece)
     {
+        Piece expectedPiece = expectedPiecePrefab.GetComponent<Piece>();
+        Piece actualPiece = piece.GetComponent<Piece>();
+
+        if(actualPiece == null || expectedPiece == null){
+            Debug.Log("[Error] - Some piece do not have the piece component...\n"+
+                $"ActualPiece: {(actualPiece == null)} || ExpectedPiece: {(expectedPiece == null)}" );
+            
+            return false;
+        }
+
         // Verifica se a peça encaixada corresponde ao prefab esperado
-        if (piece.CompareTag(expectedPiecePrefab.tag)) // Verifica a tag da peça
+        if (expectedPiece.nameTag == actualPiece.nameTag) // Verifica a tag da peça
         {
             isFilled = true;
             currentPiece = piece;
