@@ -119,6 +119,8 @@ GameObject:
   - component: {fileID: 7060197060741249937}
   - component: {fileID: 5704251952925449594}
   - component: {fileID: 3462739875421066462}
+  - component: {fileID: 5821379737682674420}
+  - component: {fileID: 8231984880580310161}
   m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
@@ -393,6 +395,38 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &5821379737682674420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047561984785800809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: RightArmWoman
+  difficult: Easy
+--- !u!114 &8231984880580310161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047561984785800809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75990896a85eec42bc49aa94afeced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollection:
+  - tagName: Wood
+    sfxName:
+    - woodPieceHit1
+    - woodPieceHit2
+    - woodPieceHit3
 --- !u!1 &8757529865070008835
 GameObject:
   m_ObjectHideFlags: 0

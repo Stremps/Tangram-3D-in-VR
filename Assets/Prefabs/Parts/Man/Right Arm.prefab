@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 6752555286658862920}
   - component: {fileID: 6755984870322948644}
   - component: {fileID: 3013611655036384580}
+  - component: {fileID: 7607568638783655998}
+  - component: {fileID: 8098861766949298697}
   m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
@@ -319,3 +321,35 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &7607568638783655998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430510100759331566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: RightArmMan
+  difficult: Easy
+--- !u!114 &8098861766949298697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4430510100759331566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75990896a85eec42bc49aa94afeced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollection:
+  - tagName: Wood
+    sfxName:
+    - woodPieceHit1
+    - woodPieceHit2
+    - woodPieceHit3

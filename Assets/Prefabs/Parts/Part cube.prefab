@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 8378356314280999459}
   - component: {fileID: 729804682766729527}
   - component: {fileID: 6634294708896106976}
+  - component: {fileID: 5254661203273229307}
   m_Layer: 6
   m_Name: Part cube
-  m_TagString: Untagged
+  m_TagString: TestPart1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,3 +287,17 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &5254661203273229307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6889325081732473007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: PartCube
+  difficult: test

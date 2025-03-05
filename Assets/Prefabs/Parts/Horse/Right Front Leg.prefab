@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2554759592931856636}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.21, z: 0}
+  m_LocalRotation: {x: -0.13052596, y: -0, z: -0, w: 0.99144495}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1011328492488574421}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
 --- !u!33 &6024130573877888553
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,6 +151,8 @@ GameObject:
   - component: {fileID: 5713944936346810184}
   - component: {fileID: 568525352881530613}
   - component: {fileID: 9156081939469278167}
+  - component: {fileID: 3685035965030208234}
+  - component: {fileID: 5717146478107083215}
   m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
@@ -243,7 +245,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: 93b2e868711cc0a49b7e3350ab9189ef, type: 3}
 --- !u!54 &568525352881530613
@@ -425,3 +427,35 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &3685035965030208234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124171131706758894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: RightFrontLegHorse
+  difficult: Easy
+--- !u!114 &5717146478107083215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8124171131706758894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75990896a85eec42bc49aa94afeced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollection:
+  - tagName: Wood
+    sfxName:
+    - woodPieceHit1
+    - woodPieceHit2
+    - woodPieceHit3

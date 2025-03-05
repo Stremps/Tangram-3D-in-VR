@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 6753681155535173049}
   - component: {fileID: 861057416052284729}
   - component: {fileID: 1163818835575896608}
+  - component: {fileID: 1481191989874823085}
+  - component: {fileID: 5266423712641564735}
   m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
@@ -319,3 +321,35 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &1481191989874823085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198033616133037257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: NeckHorse
+  difficult: Easy
+--- !u!114 &5266423712641564735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4198033616133037257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75990896a85eec42bc49aa94afeced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollection:
+  - tagName: Wood
+    sfxName:
+    - woodPieceHit1
+    - woodPieceHit2
+    - woodPieceHit3

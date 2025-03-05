@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6914148809195817667}
   - component: {fileID: 8633741659989297000}
   - component: {fileID: 8048808011485807792}
+  - component: {fileID: 1559546605077147802}
+  - component: {fileID: 4637665406265062053}
   m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
@@ -106,7 +108,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: c05bbc73890427949b3e39f07e76ee7f, type: 3}
 --- !u!54 &8633741659989297000
@@ -288,6 +290,38 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &1559546605077147802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809458321977074035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: LeftFrontLegHorse
+  difficult: Easy
+--- !u!114 &4637665406265062053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809458321977074035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b75990896a85eec42bc49aa94afeced2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionCollection:
+  - tagName: Wood
+    sfxName:
+    - woodPieceHit1
+    - woodPieceHit2
+    - woodPieceHit3
 --- !u!1 &4064762339601740105
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,13 +381,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8703205160152252468}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.21, z: 0}
+  m_LocalRotation: {x: -0.13052596, y: -0, z: -0, w: 0.99144495}
+  m_LocalPosition: {x: 0, y: -0.07, z: -0.12}
   m_LocalScale: {x: 0.7, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5362596760676430408}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -15, y: 0, z: 0}
 --- !u!33 &8195293113243058377
 MeshFilter:
   m_ObjectHideFlags: 0
