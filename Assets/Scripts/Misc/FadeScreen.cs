@@ -16,6 +16,10 @@ public class FadeScreen : MonoBehaviour
 
         if(fadeOnStart){
             FadeIn();
+            
+            if(AudioManager.Instance != null && AudioManager.Instance.musicOnStart == true){
+                AudioManager.Instance.Music_FadeIn(fadeDuration);
+            }
         }
     }
 

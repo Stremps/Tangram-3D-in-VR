@@ -43,6 +43,7 @@ public class SceneTransitionOnGrab : MonoBehaviour
 
     private IEnumerator GoToSceneRoutine(){
         fadeScreen.FadeOut();
+        AudioManager.Instance.Music_FadeOut(fadeScreen.fadeDuration);
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
 
         // Launch the new scene

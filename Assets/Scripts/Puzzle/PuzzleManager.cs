@@ -141,6 +141,7 @@ public class PuzzleManager : MonoBehaviour
     public IEnumerator GoToSceneRoutine(){
         yield return new WaitForSeconds(sceneTransitionDelay);
         fadeScreen.FadeOut();
+        AudioManager.Instance.Music_FadeOut(fadeScreen.fadeDuration);
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
         // Launch the new scene
         SceneManager.LoadScene(sceneToLoad);

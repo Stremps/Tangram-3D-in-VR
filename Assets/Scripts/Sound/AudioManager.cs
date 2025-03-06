@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     public Sound[] musicSounds, sfxSounds;
     public AudioSource musicSource, sfxSource;
     public static AudioManager Instance;
+    public bool musicOnStart;
+    public string startMusicName;
 
     private void Awake()
     {
@@ -25,7 +27,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Music_Play("Theme");
+        if(musicOnStart == true)
+        {   
+            Music_Play(startMusicName);
+        }
+        
     }
 
     public void Music_Play(string name)
@@ -74,6 +80,38 @@ public class AudioManager : MonoBehaviour
             Destroy(childSoundObject, targetSound.clip.length/pitch);
         }
         
+    }
+
+    public void Music_FadeIn(float duration)
+    {
+        Music_Fade(duration, 0, 0.2f);
+    }
+
+    public void Music_FadeOut(float duration)
+    {
+        Music_Fade(duration, 0.2f, 0);
+    }
+
+    public void Music_Fade(float duration, float volumeIn, float volumeOut)
+    {
+        StartCoroutine(Music_FadeRoutine(duration, volumeIn, volumeOut));
+    }
+
+    private IEnumerator Music_FadeRoutine(float duration, float volumeIn, float volumeOut)
+    {
+        float timer = 0f;
+
+        while(timer <= duration)
+        {
+            musicSource.volume = Mathf.Lerp(volumeIn, volumeOut, timer / duration);
+            timer+= Time.deltaTime;
+            yield return null;
+        }
+
+        musicSource.volume = volumeOut;
+        
+
+        yield break;
     }
     
     public void SFX_PlayGlobal(string name)
@@ -124,7 +162,7 @@ public class AudioManager : MonoBehaviour
         // Search the sound
         Sound targetSound = Array.Find(sfxSounds, x => x.name == name);
 
-        // If not found, send erro message
+        // If not found, send error message
         if( targetSound == null)
         {
             Debug.Log($"[SFX Erro] - Sound '{name}' not found!");
