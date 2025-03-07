@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -11,17 +14,35 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
     public bool musicOnStart;
     public string startMusicName;
+    private string actualScene;
 
     private void Awake()
     {
         if(Instance == null)
         {
             Instance = this;
+            actualScene = SceneManager.GetActiveScene().name;
             DontDestroyOnLoad(gameObject);
+        }
+        else if(actualScene != SceneManager.GetActiveScene().name) // if the scene change
+        {
+            actualScene = SceneManager.GetActiveScene().name; // Change the actualScene name
+            
+            // Refresh the sounds collection
+            Instance.musicSounds = musicSounds;
+            Instance.sfxSounds = sfxSounds;
+            Instance.musicOnStart = musicOnStart;
+
+            // Destroy the gameObject
+            Destroy(gameObject);
+
+            // Start again, based in the new scene
+            Instance.Start();
         }
         else
         {
             Destroy(gameObject);
+            Debug.Log("Audio Manager foi de vasco");
         }
     }
 
@@ -128,7 +149,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void SFX_PlayAtSource(string name, UnityEngine.Vector3 position, float pitch = 1.0f)
+    public void SFX_PlayAtSource(string name, UnityEngine.Vector3 position)
+    {
+        SFX_PlayAtSource(name, position, 1f, 1f);
+    }
+
+    public void SFX_PlayAtSource(string name, UnityEngine.Vector3 position, float pitch)
+    {
+        SFX_PlayAtSource(name, position, pitch, 1f);
+    }
+
+    public void SFX_PlayAtSource(string name, UnityEngine.Vector3 position, float pitch, float volume)
     {
         // Search the soundFX
         Sound targetSound = Array.Find(sfxSounds, x => x.name == name);
@@ -149,7 +180,8 @@ public class AudioManager : MonoBehaviour
             AudioSource audioSource = soundObject.AddComponent<AudioSource>();
             audioSource.clip = targetSound.clip;
             audioSource.pitch = pitch;
-            audioSource.volume = sfxSource.volume;
+            audioSource.volume = sfxSource.volume * volume;
+            audioSource.spatialBlend = 1.0f;
             audioSource.Play();
 
             // After the clip lenght, destroy the object
@@ -181,6 +213,7 @@ public class AudioManager : MonoBehaviour
             AudioSource audioSource = childSoundObject.AddComponent<AudioSource>();
             audioSource.clip = targetSound.clip;
             audioSource.pitch = pitch;
+            audioSource.spatialBlend = 1.0f;
             audioSource.volume = sfxSource.volume;
             audioSource.Play();
 
