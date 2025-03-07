@@ -2,15 +2,34 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections.Generic;
 
+
 public class CustomSocketInteractor : XRSocketInteractor
 {
     [Header("Snapping Settings")]
     [Tooltip("Define a porcentagem de sobreposição necessária para ativar o snap.")]
     [Range(0f, 1f)]
     public float requiredOverlapPercentage = 0.5f;
-
+    private float m_LastRemoveTime = -1f;
     private Collider socketCollider;
     private static Dictionary<XRBaseInteractable, CustomSocketInteractor> bestSockets = new Dictionary<XRBaseInteractable, CustomSocketInteractor>();
+
+    [Header("Selected Sounds")]
+    public string[] OnEnter;
+    public string[] OnExit;
+
+    private void playRandomSound(string[] OnSome, float pitch)
+    {
+        
+        if(OnSome != null && OnSome.Length > 0)
+        {   
+            // Select a random song, if there more than one
+            int index = Random.Range(0, OnSome.Length);
+            string soundName = OnSome[index];
+
+            // Play the audio
+            AudioManager.Instance.SFX_PlayAtSource(soundName, this.transform.position, pitch);
+        }
+    }
 
     protected override void Awake()
     {
@@ -43,6 +62,23 @@ public class CustomSocketInteractor : XRSocketInteractor
 
         // Permite hover somente se este for o socket com maior sobreposição
         return bestSockets[interactable] == this;
+    }
+
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        base.OnSelectEntered(args);
+        if (args.interactableObject is XRGrabInteractable grabInteractable)
+        {
+            StartSocketSnapping(grabInteractable);
+            playRandomSound(OnEnter, 1.2f);
+        }
+    }
+
+    protected override void OnSelectExiting(SelectExitEventArgs args)
+    {
+        base.OnSelectExiting(args);
+        playRandomSound(OnEnter, 0.8f);
+        m_LastRemoveTime = Time.time;
     }
 
     public override bool CanSelect(XRBaseInteractable interactable)
