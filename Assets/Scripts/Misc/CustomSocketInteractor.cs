@@ -27,7 +27,7 @@ public class CustomSocketInteractor : XRSocketInteractor
             string soundName = OnSome[index];
 
             // Play the audio
-            AudioManager.Instance.SFX_PlayAtSource(soundName, this.transform.position, pitch);
+            AudioManager.Instance.SFX_PlayAtSource(soundName, this.transform.position, pitch, 0.4f);
         }
     }
 
