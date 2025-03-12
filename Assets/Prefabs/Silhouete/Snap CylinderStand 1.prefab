@@ -191,6 +191,10 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.107
+  OnEnter:
+  - ClickSound1
+  OnExit:
+  - ClickSound1
 --- !u!64 &4177775050257732271
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -406,6 +410,8 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.5
+  OnEnter: []
+  OnExit: []
 --- !u!114 &4341615135379293195
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -212,6 +212,10 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.107
+  OnEnter:
+  - ClickSound1
+  OnExit:
+  - ClickSound1
 --- !u!1 &7978380101251758411
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +430,8 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.5
+  OnEnter: []
+  OnExit: []
 --- !u!114 &4341615135379293195
 MonoBehaviour:
   m_ObjectHideFlags: 0

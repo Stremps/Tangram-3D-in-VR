@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0.15400013, y: 1.002, z: 0.21000013}
   m_LocalScale: {x: 0.19999999, y: 0.40000004, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5415645579413620218}
   m_Father: {fileID: 170312692322175965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2989473846524723956
@@ -167,6 +168,11 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.2
+  OnEnter:
+  - ClickSound1
+  - ClickSound3
+  OnExit:
+  - ClickSound2
 --- !u!1 &880743919642513126
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,12 +197,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880743919642513126}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.053400047, y: 1.4034002, z: -0.0021000113}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.007000041, y: -0.12199957, z: -0.021999964}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 170312692322175965}
+  m_Father: {fileID: 5052222534680827710}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1089304829929526396
 GameObject:
@@ -222,12 +228,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089304829929526396}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.004999992, y: 0.859, z: -0.24100022}
-  m_LocalScale: {x: 0.19999996, y: 0.40000004, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.16000095, y: -0.22999986, z: -0.53000015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 170312692322175965}
+  m_Father: {fileID: 369965154525525065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276722348347782832
 GameObject:
@@ -261,7 +267,8 @@ Transform:
   m_LocalPosition: {x: 0.15400006, y: 0.951, z: -0.20900013}
   m_LocalScale: {x: 0.19999999, y: 0.40000004, z: 0.3}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 789296038164011547}
   m_Father: {fileID: 170312692322175965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2449192677634937530
@@ -396,6 +403,11 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.2
+  OnEnter:
+  - ClickSound1
+  - ClickSound3
+  OnExit:
+  - ClickSound2
 --- !u!1 &1630600117985131770
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +576,11 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.2
+  OnEnter:
+  - ClickSound1
+  - ClickSound3
+  OnExit:
+  - ClickSound2
 --- !u!1 &1670155027047875990
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,7 +613,8 @@ Transform:
   m_LocalPosition: {x: 0.060000047, y: 1.44, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 8811891272894338359}
   m_Father: {fileID: 170312692322175965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6530495014141095274
@@ -731,6 +749,11 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.2
+  OnEnter:
+  - ClickSound1
+  - ClickSound3
+  OnExit:
+  - ClickSound2
 --- !u!1 &2637449478231202420
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,13 +786,9 @@ Transform:
   m_Children:
   - {fileID: 5040958716667813497}
   - {fileID: 5052222534680827710}
-  - {fileID: 8811891272894338359}
   - {fileID: 680967613790805013}
-  - {fileID: 8791177862198537759}
   - {fileID: 6530795303431212840}
-  - {fileID: 5415645579413620218}
   - {fileID: 369965154525525065}
-  - {fileID: 789296038164011547}
   - {fileID: 3671714880560220222}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -820,12 +839,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3840446560987841862}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.009199969, y: 0.91520005, z: 0.14400014}
-  m_LocalScale: {x: 0.19999996, y: 0.40000004, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.32999983, y: -0.21699978, z: -0.5440003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 170312692322175965}
+  m_Father: {fileID: 6530795303431212840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4270320921580588354
 GameObject:
@@ -1571,7 +1590,8 @@ Transform:
   m_LocalPosition: {x: 0.071000054, y: 1.07, z: 0}
   m_LocalScale: {x: 0.25, y: 0.35, z: 0.19999999}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8791177862198537759}
   m_Father: {fileID: 170312692322175965}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3335091375811214159
@@ -1706,6 +1726,11 @@ MonoBehaviour:
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
   requiredOverlapPercentage: 0.2
+  OnEnter:
+  - ClickSound1
+  - ClickSound3
+  OnExit:
+  - ClickSound2
 --- !u!1 &5999708624583248022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,12 +1755,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5999708624583248022}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.07900007, y: 1.062, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.35, z: 0.19999996}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.022857187, z: 0.040000163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 170312692322175965}
+  m_Father: {fileID: 680967613790805013}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8367536490615634239
 GameObject:
