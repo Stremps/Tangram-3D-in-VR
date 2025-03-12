@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionCollection:
-  - tagName: targetSound
+  - tagName: Wood
     sfxName:
     - woodPieceHit1
     - woodPieceHit2
