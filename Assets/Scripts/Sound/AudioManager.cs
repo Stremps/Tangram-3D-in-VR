@@ -9,8 +9,8 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] musicSounds, sfxSounds;
-    public AudioSource musicSource, sfxSource;
+    public Sound[] ambienceSounds, musicSounds, sfxSounds;
+    public AudioSource ambienceSource, musicSource, sfxSource;
     public static AudioManager Instance;
     public bool musicOnStart;
     public string startMusicName;
@@ -51,6 +51,36 @@ public class AudioManager : MonoBehaviour
         if(musicOnStart == true)
         {   
             Music_Play(startMusicName);
+        }
+        
+    }
+
+        public void Ambience_PlayAttached(string name, Transform parentTransform)
+    {
+        // Search the sound
+        Sound targetSound = Array.Find(ambienceSounds, x => x.name == name);
+
+        // If not found, send error message
+        if( targetSound == null)
+        {
+            Debug.Log($"[Ambience Erro] - Sound '{name}' not found!");
+        }
+        // If found play the following the object
+        else
+        {
+            //Creates the game object
+            GameObject childSoundObject = new GameObject("TempAmbienceSound");
+
+            // Attach as a Child
+            childSoundObject.transform.SetParent(parentTransform);
+            childSoundObject.transform.localPosition = UnityEngine.Vector3.zero;
+
+            // Add AudioSource in the temp child game object
+            AudioSource audioSource = childSoundObject.AddComponent<AudioSource>();
+            audioSource.clip = targetSound.clip;
+            audioSource.spatialBlend = 1.0f;
+            audioSource.volume = ambienceSource.volume;
+            audioSource.Play();
         }
         
     }
