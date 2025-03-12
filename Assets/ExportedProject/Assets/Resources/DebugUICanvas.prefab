@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1142721095401112
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 224171299474434173}
+  - component: {fileID: 223141303884206853}
+  - component: {fileID: 114503740367847014}
+  - component: {fileID: 114512898744005916}
+  - component: {fileID: 114865817078076637}
+  m_Layer: 5
+  m_Name: DebugUICanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224171299474434173
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142721095401112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!223 &223141303884206853
+Canvas:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142721095401112}
+  m_Enabled: 1
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &114503740367847014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142721095401112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: d3e719b59ab71ba3f6b398058c866280, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!114 &114512898744005916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142721095401112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: d3e719b59ab71ba3f6b398058c866280, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &114865817078076637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142721095401112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -455843761, guid: 57c9a3e5193e26c4b968cc86e528416d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  panelPrefab: {fileID: 224998322792281973, guid: 31e75b63056b052498a218c64c41ce3a, type: 2}
+  prefabs:
+  - type: UnityEngine.Rendering.DebugUI+Value, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224980350880142928, guid: b44fa4d6b90dc51468e423b41f9361d4, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+BoolField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224074493233184402, guid: d69acccbe2a31914fa946f42beaa8c42, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+IntField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224110959028035552, guid: f373d290a7ca6674384f6959a9e78ca1, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+UIntField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224415204632358820, guid: cb28804dc36e027459da23b8172725dd, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+FloatField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224989636385987139, guid: 5da05abb22fcce941b9560d4d8935a6f, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+EnumField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224516223273136149, guid: f609d73ae0d61774ca64e339387688c7, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Button, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224840490349623205, guid: d662e417e2c57f44c93b597921020ef5, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Foldout, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224974674806525755, guid: bcb2e00dbb1610b4fbadc89472f56aa0, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+ColorField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224717401109530274, guid: f1c52d20b8684f34785d1a4b098beb0a, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Vector2Field, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224228328298089891, guid: 30309624e4c81c34ea0c0d742a2152c3, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Vector3Field, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224103242278138505, guid: b55c59e5488565b4893e80649766c7bf, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Vector4Field, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224389235904558100, guid: 23bbf2d434837074889173c4dcc273fd, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+VBox, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224212958875605066, guid: cfe839aab90bbe94f867c73862a56629, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+HBox, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224254814513537466, guid: 712ecfb8a411d264694204f954af4319, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Container, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224238442158713432, guid: dca75d1c8cde2664aa370f529d55c414, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+BitField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224949873032406128, guid: 339d76dc7369fb24ea65720b08767cf3, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+HistoryBoolField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224343238356758513, guid: e92caaff6acc4a143b963452e0d743a1, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+HistoryEnumField, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224625946964939298, guid: 19155e7ea4ca6d84a958cc89e9817410, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Table, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224238442158713432, guid: dca75d1c8cde2664aa370f529d55c414, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+Table+Row, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224382611681617676, guid: d2ca2614287ddfe4f9699a0894d04e13, type: 2}
+  - type: UnityEngine.Rendering.DebugUI+MessageBox, Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    prefab: {fileID: 224462143167291450, guid: 8944c13fdf831f549a1de4605c1a2933, type: 2}
