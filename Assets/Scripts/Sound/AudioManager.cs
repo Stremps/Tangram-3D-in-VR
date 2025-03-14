@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -80,6 +79,7 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = targetSound.clip;
             audioSource.spatialBlend = 1.0f;
             audioSource.volume = ambienceSource.volume;
+            audioSource.loop = true;
             audioSource.Play();
         }
         

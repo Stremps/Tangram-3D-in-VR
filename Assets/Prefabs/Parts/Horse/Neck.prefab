@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1179754903323276835}
+  - component: {fileID: 8749616663032444088}
   m_Layer: 6
   m_Name: Neck
   m_TagString: Untagged
@@ -32,6 +33,20 @@ Transform:
   - {fileID: 4968673437399388146}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8749616663032444088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4064762339601740105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f79d874db43cfd49b2619b4e9a9cc36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTag: NeckHorse
+  difficult: Easy
 --- !u!1 &4198033616133037257
 GameObject:
   m_ObjectHideFlags: 0

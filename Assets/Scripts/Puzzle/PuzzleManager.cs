@@ -29,6 +29,9 @@ public class PuzzleManager : MonoBehaviour
     [Tooltip("Tempo de espera antes de carregar a cena final.")]
     public float sceneTransitionDelay = 3f; // Novo temporizador para a transição de cena
 
+    public GameObject particleEffectPrefab;
+
+
     private int currentPuzzleIndex = 0;
     private GameObject activePuzzle;
     private GameObject activeFinalPrefab;
@@ -54,6 +57,7 @@ public class PuzzleManager : MonoBehaviour
         if (currentPuzzleIndex >= puzzleSilhouettes.Count)
         {
             Debug.Log("Todos os quebra-cabeças foram concluídos!");
+            
             if (enableSceneTransition)
                 StartCoroutine(GoToSceneRoutine());
             return;
@@ -105,7 +109,18 @@ public class PuzzleManager : MonoBehaviour
 
     private IEnumerator TransformPuzzle()
     {
-        yield return new WaitForSeconds(transformDelay);
+        
+        // ADD MORE CONTROL OF THIS TRANSITION
+        if (particleEffectPrefab != null)
+        {
+            yield return new WaitForSeconds(transformDelay/2);
+            // ADD NAME CHOICE IN INSPECTOR
+            AudioManager.Instance.SFX_PlayAtSource("magicTransition", transform.position);
+            GameObject particles = Instantiate(particleEffectPrefab, activePuzzle.transform.position, Quaternion.identity);
+            Destroy(particles, particleEffectPrefab.GetComponent<ParticleSystem>().main.duration); // 🔹 Destroi as partículas após sua duração
+            
+        }
+        yield return new WaitForSeconds(transformDelay/2);
 
         // Remove a silhueta e todas as peças encaixadas
         Destroy(activePuzzle);
@@ -127,6 +142,8 @@ public class PuzzleManager : MonoBehaviour
         else
         {
             Debug.Log("Todos os objetos foram transformados. Fim do desafio!");
+            yield return new WaitForSeconds(transformDelay/2);
+            AudioManager.Instance.SFX_PlayAtSource("PuzzleConclusion", transform.position);
             if(enableSceneTransition) 
                 StartCoroutine(GoToSceneRoutine());
         }

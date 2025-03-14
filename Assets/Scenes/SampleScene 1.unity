@@ -449,11 +449,12 @@ MonoBehaviour:
   - {fileID: 1471612167515755248, guid: 9fb92356d5fac59429201522f25527bc, type: 3}
   - {fileID: 4277811797101036514, guid: 0a4c20c854dc4e142a2aab1798821b9b, type: 3}
   - {fileID: 7101931740028960868, guid: 59e4c18de9697b548981d915d230d644, type: 3}
-  transformDelay: 2
-  transitionDelay: 4
+  transformDelay: 4
+  transitionDelay: 5
   enableSceneTransition: 0
   sceneToLoad: SampleScene 1
   sceneTransitionDelay: 3
+  particleEffectPrefab: {fileID: 5020709983651013073, guid: dd240235d03fdf44a8c22b2d8e52ad65, type: 3}
   fadeScreen: {fileID: 0}
   pieceSpawner: {fileID: 1837029202}
 --- !u!4 &149017638
@@ -2398,6 +2399,11 @@ MonoBehaviour:
   requiredOverlapPercentage: 0.75
   OnEnter: []
   OnExit: []
+--- !u!82 &884532282 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7177113389334984580, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+  m_PrefabInstance: {fileID: 4807787576087553244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &894519087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,11 +2439,12 @@ MonoBehaviour:
   finalPrefabs:
   - {fileID: 4957231571477918332, guid: 92d4430c1aabefa4691079bac409cbf9, type: 3}
   - {fileID: 919132149155446097, guid: b1a99a1c356120a42b0c9cbe015ec442, type: 3}
-  transformDelay: 2
-  transitionDelay: 4
-  enableSceneTransition: 1
+  transformDelay: 4
+  transitionDelay: 6
+  enableSceneTransition: 0
   sceneToLoad: Room Scene
   sceneTransitionDelay: 3
+  particleEffectPrefab: {fileID: 5020709983651013073, guid: dd240235d03fdf44a8c22b2d8e52ad65, type: 3}
   fadeScreen: {fileID: 443979970}
   pieceSpawner: {fileID: 0}
 --- !u!4 &894519089
@@ -5582,16 +5589,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: ambienceSource
+      value: 
+      objectReference: {fileID: 884532282}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: startMusicName
       value: Theme
       objectReference: {fileID: 0}
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: sfxSounds.Array.size
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: musicSounds.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: ambienceSounds.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: sfxSounds.Array.data[0].clip
@@ -5668,10 +5683,18 @@ PrefabInstance:
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: sfxSounds.Array.data[9].clip
       value: 
-      objectReference: {fileID: 8300000, guid: ad19735738e3863458a8cca7eff4cf58, type: 3}
+      objectReference: {fileID: 8300000, guid: 16fc226aad233ef42beb741b2d8e3fd6, type: 3}
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: sfxSounds.Array.data[9].name
-      value: ClickSound3
+      value: magicTransition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: sfxSounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 90946e67890c0ad41a833e644ebed039, type: 3}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: sfxSounds.Array.data[10].name
+      value: PuzzleConclusion
       objectReference: {fileID: 0}
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: musicSounds.Array.data[0].clip
@@ -5680,6 +5703,22 @@ PrefabInstance:
     - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: musicSounds.Array.data[0].name
       value: Theme
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: ambienceSounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: fc9e4ef8e9952804c9264d7440fcf140, type: 3}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: ambienceSounds.Array.data[0].name
+      value: Ambience1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: ambienceSounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 86e57b6d59cce9d478bb38e425d13bca, type: 3}
+    - target: {fileID: 1937477224238922759, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
+      propertyPath: ambienceSounds.Array.data[1].name
+      value: Ambience2
       objectReference: {fileID: 0}
     - target: {fileID: 2229456994848162453, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5723,7 +5762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5649518050748464717, guid: faf8dde3479340646a38eecf9a2c6359, type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
